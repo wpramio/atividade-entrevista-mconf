@@ -1,0 +1,13 @@
+<h1>Atividade Entrevista Mconf</h1>
+<p>Web application powered by Ruby on Rails</p>
+
+<div id="message_form">
+  <%= render 'messages/form' %>
+</div>
+
+<div id="messages_index">
+  <h2>Messages</h2>
+  <ul id="messages_list">
+    <%= render @messages %>
+  </ul>
+</div>
