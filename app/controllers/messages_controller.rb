@@ -5,11 +5,12 @@ class MessagesController < ApplicationController
 
     def create
         @message = Message.create(msg_params)
-        @message.content = lookfor_mconf(@message.content)
+        lookfor_mconf(@message.content)
         if @message.save
             ActionCable.server.broadcast 'room_channel',
             timestamp: @message.created_at.advance(hours: -3).to_formatted_s(:db),
-            content: @message.content
+            content: @message.content,
+            contains_mconf: @message.contains_mconf?
         end
     end
 
@@ -18,6 +19,11 @@ class MessagesController < ApplicationController
             params.require(:message).permit(:content)
         end
         def lookfor_mconf(str)
-            return str.gsub(/mconf/i, 'Mconf')
+            if str.match?(/mconf/i)
+                str.gsub!(/mconf/i, 'Mconf')
+                @message.set_contains_mconf!(true)
+            else
+                @message.set_contains_mconf!(false)
+            end
         end
 end

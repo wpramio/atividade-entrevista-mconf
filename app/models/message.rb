@@ -4,7 +4,7 @@ class Message < ApplicationRecord
     def contains_mconf?
         return @contains_mconf
     end
-    def contains_mconf!
-        @contains_mconf = true
+    def set_contains_mconf!(set)
+        @contains_mconf = set
     end
 end
