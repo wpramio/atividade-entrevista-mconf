@@ -1,0 +1,11 @@
+<%= form_with(model: @message, id: :message_form) do |form| %>
+
+    <p>
+        <%= form.label :message %>
+        <%= form.text_field :content %>
+    </p>
+
+    <p>
+        <%= form.submit("Send message") %>
+    </p>
+<% end %>
