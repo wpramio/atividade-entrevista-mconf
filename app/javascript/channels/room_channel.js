@@ -1,5 +1,5 @@
 import consumer from "./consumer"
-var id_number = 0
+import random_color from 'random_color'
 consumer.subscriptions.create("RoomChannel", {
   connected() {
     console.log("Yay, we are connected!")
@@ -11,8 +11,11 @@ consumer.subscriptions.create("RoomChannel", {
   
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    ++id_number;
-    $('#messages_list').append('<li id="msg_' + id_number + '">' + data.timestamp + ':  ' + data.content + '</li>')
+    $('#messages_list').append('<li class="msg">' + data.timestamp + ':  ' + data.content + '</li>')
+    if (data.contains_mconf){
+      $(".msg").last().css("color", random_color())
+      $(".msg").last().css("font-weight", "bold")
+    }
     $('#message_content').val('')
     console.log(data)
   }
