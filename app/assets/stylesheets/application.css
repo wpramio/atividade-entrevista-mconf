@@ -64,6 +64,7 @@ body {
 
 #message_content {
     width: 30rem;
+    max-width: 90%;
     border: 1px solid rgba(100, 100, 100, 0.75);
     border-radius: 3px;
     padding: 0.3rem;
