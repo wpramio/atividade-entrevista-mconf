@@ -1,13 +1,21 @@
-<h1>Atividade Entrevista Mconf</h1>
-<p>Web application powered by Ruby on Rails</p>
+<div class="main centralized">
 
-<div id="message_form">
-  <%= render 'messages/form' %>
-</div>
+  <div class="top-box whitebg">
+    <h1 class="maintitle">Atividade Entrevista Mconf</h1>
+    <p class = "description">Web application powered by <span class="ruby-red">Ruby on Rails</span></p>
+    <div id="message_form" class="message_form">
+      <%= render 'messages/form' %>
+    </div>
+  </div>
 
-<div id="messages_index">
-  <h2>Messages</h2>
-  <ul id="messages_list">
-    <%= render @messages %>
-  </ul>
+  <div class="bottom-box whitebg">
+    <h2 class="subtitle">Messages</h2>
+    <ul id="messages_list">
+      <%= render @messages %>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p class="ruby-red"><a href="mailto:willianpramio@hotmail.com">Willian Pramio</a> | 2020</p>
+  </div>
 </div>
