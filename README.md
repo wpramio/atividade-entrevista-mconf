@@ -3,7 +3,6 @@
 Aplicação Ruby on Rails para submissão e exibição de mensagens de texto. O usuário entra em uma página web, escreve uma mensagem em um campo de texto e clica em um botão para submeter.
 
 A página tem duas seções:
-
 Os campos de submissão (input de texto e botão de enviar) no topo;
 Todas as mensagens já submetidas logo a baixo, uma após a outra. Cada mensagem é exibida no format: "data de submissão: mensagem".
 
