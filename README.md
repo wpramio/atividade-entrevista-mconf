@@ -6,7 +6,6 @@ A página tem duas seções:
 
 Os campos de submissão (input de texto e botão de enviar) no topo;
 Todas as mensagens já submetidas logo a baixo, uma após a outra. Cada mensagem é exibida no format: "data de submissão: mensagem".
-Ao exibir a lista de mensagens na página, URLs são convertidas para links utilizando a biblioteca https://github.com/tenderlove/rails_autolink. 
 
 Se o texto da mensagem contém a palavra "Mconf" (qualquer grafia da palavra, incluindo "MConf", "MCONF", "mcoNF"), converte para "Mconf" (exatamente nessa grafia), exibe em negrito e em uma cor sorteada entre as seguintes cores: #481E9D, #8D74C0, #CA4B57, #2B2D42, #1C77C3, #81B29A, #E98039
 
