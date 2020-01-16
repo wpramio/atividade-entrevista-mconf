@@ -14,6 +14,9 @@
  *= require_self
  */
 
+.whitebg {
+    background-color: white;
+}
 .bgcolor-0 {
     background-color: #481E9D;
  }

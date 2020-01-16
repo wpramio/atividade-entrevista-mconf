@@ -1,20 +1,19 @@
-const pattern = /mconf/i;
 var original_bgcolor = true
-
-import random_color from 'random_color'
 
 // input: evento gerado por form fields (<input>, <select> e <textarea>)
 $(document).on('turbolinks:load', function(){
     $( "#message_content" ).on("input",function(){
-        var str = $("#message_content").val();
-        if ( str.search(pattern) > -1 ) {
+        var val = $("#message_content").val();
+        const pattern = /mconf/i;
+        if ( val.search(pattern) > -1 ) {
             if (original_bgcolor) {
-                $("body").css( "background-color", random_color())
+                var random_number = Math.round(Math.random()*6)      
+                $("body").removeClass("whitebg").addClass("bgcolor-"+random_number)
                 original_bgcolor = false
             }
         }
-        else {
-            $("body").css("background-color", "white")
+        else if (!original_bgcolor){
+            $("body").removeClass().addClass("whitebg")
             original_bgcolor = true
         }     
     })
@@ -22,8 +21,10 @@ $(document).on('turbolinks:load', function(){
 
 $(document).on('turbolinks:load', function(){
     $("#message_form").on("submit", function(){
-            $("body").css( "background-color", "white" )
+        if (!original_bgcolor){
+            $("body").removeClass().addClass("whitebg")
             original_bgcolor = true
+        }
     })
 })
 
